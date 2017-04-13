@@ -1,0 +1,38 @@
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.codigo) }}
+        {{ form_widget(form.codigo, {'attr' : {'placeholder' : 'Nombre', 'class': 'form-control'}}) }}
+        <span >{{ form_errors(form.codigo) }}</span>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.nombre) }}
+        {{ form_widget(form.nombre, {'attr' : {'placeholder' : 'Nombre', 'class': 'form-control'}}) }}
+        <span >{{ form_errors(form.nombre) }}</span>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.objetivo) }}
+        {{ form_widget(form.objetivo, {'attr' : {'placeholder' : 'Objetivo', 'class': 'form-control'}}) }}
+        <span >{{ form_errors(form.objetivo) }}</span>
+    </div>
+   <div class="form-group">
+        {{ form_label(form.tareas) }}
+        {{ form_widget(form.tareas, {'attr' : {'placeholder' : 'Tareas', 'class': 'form-control'}}) }}
+        <span >{{ form_errors(form.tareas) }}</span>
+    </div>
+    
+   <div class="form-group">
+        {{ form_label(form.competencias) }}
+        {{ form_widget(form.competencias, {'attr' : {'placeholder' : 'Competencias', 'class': 'form-control'}}) }}
+        <span >{{ form_errors(form.competencias) }}</span>
+    </div>
+    
+    
+    <br>
+    <div class="row">
+        <div class="col-md-12 text-right">  
+            {{ form_widget(form.save, {'label' : 'Guardar', 'attr' : {  'class': 'form-control', 'class': 'btn btn-info'}}) }}
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal" onclick="parent.cerrarActualizarPerfil()">Cerrar</button>
+        </div>
+    </div>
+

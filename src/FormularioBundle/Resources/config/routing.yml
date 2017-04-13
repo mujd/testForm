@@ -1,0 +1,12 @@
+formulario_homepage:
+    path:     /
+    defaults: { _controller: FormularioBundle:Perfil:index }
+perfil_list:
+    path:     /perfil
+    defaults: { _controller: FormularioBundle:Perfil:list }
+perfil_add:
+    path:     /perfil/add
+    defaults: { _controller: FormularioBundle:Perfil:add }
+perfil_update:
+    path:     /perfil/update/{id}
+    defaults: { _controller: FormularioBundle:Perfil:update }
