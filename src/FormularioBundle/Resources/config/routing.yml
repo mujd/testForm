@@ -10,3 +10,9 @@ perfil_add:
 perfil_update:
     path:     /perfil/update/{id}
     defaults: { _controller: FormularioBundle:Perfil:update }
+perfil_edit:
+    path:     /perfil/edit/{id}
+    defaults: { _controller: FormularioBundle:Perfil:edit }
+task:
+    path:     /task
+    defaults: { _controller: FormularioBundle:Task:new }

@@ -50,12 +50,13 @@ class Perfil
     private $tareas;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="competencias", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="PerfilCompetencia", mappedBy="perfilId", cascade={"persist", "remove"})
      */
-    private $competencias;
-
+    private $perfilCompetencias;
+    
+    public function __construct() {
+        $this->perfilCompetencias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -162,29 +163,39 @@ class Perfil
     {
         return $this->tareas;
     }
+    
+    public function __toString()
+    {
+        return $this->getCompetenciaNombre();
+    }
 
     /**
-     * Set competencias
-     *
-     * @param string $competencias
-     *
-     * @return Perfil
+     * Add perfilCompetencias
+     * @param \FormularioBundle\Entity\PerfilCompetencia $perfilCompetencia
+     * 
+     * @return doc
      */
-    public function setCompetencias($competencias)
-    {
-        $this->competencias = $competencias;
-
+    public function addPerfilCompetencia(\FormularioBundle\Entity\PerfilCompetencia $perfilCompetencia) {
+        $this->perfilCompetencias[] = $perfilCompetencia;
+        //$perfilCompetencia->setDoc($this);
         return $this;
     }
-
+    
     /**
-     * Get competencias
-     *
-     * @return string
+     * Remove perfilCompetencias
+     * @param \FormularioBundle\Entity\PerfilCompetencia $perfilCompetencias
      */
-    public function getCompetencias()
-    {
-        return $this->competencias;
+    public function removePerfilCompetencia(\FormularioBundle\Entity\PerfilCompetencia $perfilCompetencias) {
+        $this->perfilCompetencias->removeElement($perfilCompetencias);                
     }
+    
+    /**
+     * Get perfilCompetencias
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPerfilCompetencias() {
+        return $this->perfilCompetencias;
+    }
+    
 }
 

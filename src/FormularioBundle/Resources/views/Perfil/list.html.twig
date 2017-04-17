@@ -8,7 +8,6 @@
                         <th>Nombre</th>
                         <th>Objetivo</th>
                         <th>Tareas</th>
-                        <th>Competencias</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -20,9 +19,9 @@
                             <td>{{ perfil.nombre }}</td>
                             <td>{{ perfil.objetivo }}</td>
                             <td>{{ perfil.tareas }}</td>
-                            <td>{{ perfil.competencias }}</td>
                             <td>                                
                                 <a class="" title="Edita este perfil" href={{ path("perfil_update", {id: perfil.id})}}>Editar</span></a>
+                                <a class="" title="Edita este perfil" href={{ path("perfil_edit", {id: perfil.id})}}>Editar</span></a>
                                 <a class="" title="Elimina este perfil" href="#">Borrar</span></a>                            
                             </td>
                         </tr>
